@@ -2,8 +2,14 @@ class DecksController < ApplicationController
 
     # Postman tested
     def index
-        decks = Deck.all
-        render json: decks
+        all_decks = Deck.all
+        user_decks = []
+        all_decks.map do | deck |
+            if deck.user_id == params[:user_id]
+                user_decks.push(deck)
+            end
+        end
+        render json: user_decks
     end
 
     # Postman tested

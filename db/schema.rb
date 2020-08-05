@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2020_08_04_185327) do
 
   create_table "flash_cards", force: :cascade do |t|
     t.bigint "deck_id", null: false
-    t.string "title"
-    t.text "content"
+    t.string "question"
+    t.text "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["deck_id"], name: "index_flash_cards_on_deck_id"
