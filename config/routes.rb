@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
   resources :flash_cards, only: [:update, :destroy]
   
+  post '/login', to: 'authentication#login'
+
 end
